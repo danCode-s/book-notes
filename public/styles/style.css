@@ -1,3 +1,60 @@
-h1{
-    background-color:  yellow;
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Afacad Flux", sans-serif;
 }
+
+
+nav{
+    border: 1px solid black;
+    height: 10vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.functional-btns{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.functional-btns > form{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30vh;
+    width: 75vw;
+}
+.functional-btns > form > input{
+    margin-top: 40px;
+}
+
+input{
+
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.add{
+    height: 50px;
+    width: 150px ;
+}
+
+
+.sort{
+    height: 30px;
+    width: 100px;
+    margin: 3px;
+}
+
+
+input:hover{
+    background-color: rgb(222, 219, 219);
+}
+

@@ -6,7 +6,23 @@
     <title>Book Notes</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
+<section class="header">
+    <nav>
+        <h1>Book Notes</h1>
+    </nav>
+
+</section>
 <body>
-    <h1>Hello</h1>   
+    <section class="functional-btns">
+        <form action="/user-act" method="post">
+            <input type="submit" class="add" name="add-btn" value="Add a Book">
+            <div class="sort">
+                <h3>Sort by:</h3>
+                <input type="submit" class="rating sort" value="Rating">
+                <input type="submit" class="time sort" value="Time">
+            </div>
+        </form>
+    </section>
+
 </body>
 </html>
