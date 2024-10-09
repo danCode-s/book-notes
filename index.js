@@ -20,6 +20,9 @@ const books = [
     {id: 2, book_name: "Harry Potter and the Philosopher's Stone", author: "j.k rowling", ISBN: 9780747532699, review: "GOOD BOOK", rating: 4},
 ];
 
+books.forEach(async book => {
+    book['img_url'] = await getBookImageURL(book.ISBN);
+})
 
 // Connect to the database
 const db = new pg.Client({
@@ -46,9 +49,7 @@ async function checkCurrentBooks(){
 
 
 
-books.forEach(async book => {
-    book['img_url'] = await getBookImageURL(book.ISBN);
-})
+
 
 
 app.get("/", async (req, res) => {
