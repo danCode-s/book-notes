@@ -6,6 +6,9 @@
     box-sizing: border-box;
     font-family: "Afacad Flux", sans-serif;
 }
+body{
+    margin: 0;
+}
 
 
 nav{
@@ -60,18 +63,19 @@ input:hover{
 
 .books > .container{
     margin-top: 2px;
-    /* background-color: blue; */
+    
     width: 100vw;
     display: flex;
     justify-content: center;
-    gap: 10px;
+
     align-items: center;
     flex-direction: column;
+    
 
 }
 .card{
+    position: relative;
     height: 26vh;
-    /* background-color: red; */
     display: flex;
     flex-direction: row;
     width: 70vw;
@@ -80,6 +84,8 @@ input:hover{
     /* padding-top: 20px;
     padding-bottom: 20px; */
     padding: 10px;
+    cursor: pointer;
+    margin-bottom: 0;
 }
 .card > img{
     margin: 20px;
@@ -94,4 +100,33 @@ input:hover{
     display: flex;
     flex-direction: column;
     padding-top: 10px;
+}
+
+.hidden{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.review{
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    /* background-color: red; */
+    display: flex;
+    width: 70vw;
+    align-items: center;
+    margin-top: 0;
+    border-top:0;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    /* padding-top: 20px;
+    padding-bottom: 20px; */
+    padding: 10px;
+    cursor: pointer;
+
+}
+h1{
+    text-align: center  ;
 }

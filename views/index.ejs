@@ -30,14 +30,20 @@
         <div class="container">
             <% if (locals.books){%>
                 <% books.forEach(book => {%>
-                    <div class="card">
+                    <div class="card" onclick="showReview();">
                         <img src="<%=book.img_url%>" alt="">
                         <div class="data">
                             <h1><%= book.name%></h1>
                             <p><%=book.author%></p>
                         </div>
                         <h3>Rating: <%=book.rating%></h3>
+                        
                     </div>
+                    <div class="review hidden">
+                        <h1>Review</h1>
+                        <p><%= book.review %></p>
+                    </div>
+                    
                 <%}); %>    
             <%}else{%>
                 <h1>Please add a book!</h1>
@@ -45,5 +51,10 @@
         </div>
     </section>
 
+    <script>
+        function showReview(){
+            document.querySelector(".review").classList.toggle("hidden")
+        }
+    </script>
 </body>
 </html>

@@ -48,13 +48,9 @@ async function checkCurrentBooks(){
 }
 
 
-
-
-
-
 app.get("/", async (req, res) => {
     const books = await checkCurrentBooks();
-    console.log(books)
+    // console.log(books)
     res.render("index.ejs", {books: books});
 
 })
