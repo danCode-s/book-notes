@@ -25,15 +25,18 @@
     </section>
     <section class="books">
         <div class="container">
-            <div class="card">
-                <img src="/images/harry.png" alt="">
-                <div class="data">
-                    <h1>Book Name</h1>
-                    <p>Book Author</p>
-                </div>
-                <h3>Rating: </h3>
-                
-            </div>
+            <% if (locals.books){%>
+                <% books.forEach(book => {%>
+                    <div class="card">
+                        <img src="/images/harry.png" alt="">
+                        <div class="data">
+                            <h1><%= book.book_name%></h1>
+                            <p><%=book.author%></p>
+                        </div>
+                        <h3>Rating: <%=book.rating%></h3>
+                    </div>
+                <%}); %>    
+        <%}%>
         </div>
     </section>
 
