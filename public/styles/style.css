@@ -59,6 +59,7 @@ input:hover{
 }
 
 .books > .container{
+    margin-top: 2px;
     /* background-color: blue; */
     width: 100vw;
     display: flex;

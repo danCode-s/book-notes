@@ -21,9 +21,12 @@
                 <input type="submit" class="rating sort" value="Rating">
                 <input type="submit" class="time sort" value="Time">
             </div>
+            
         </form>
     </section>
+
     <section class="books">
+        <hr>
         <div class="container">
             <% if (locals.books){%>
                 <% books.forEach(book => {%>
@@ -36,7 +39,9 @@
                         <h3>Rating: <%=book.rating%></h3>
                     </div>
                 <%}); %>    
-        <%}%>
+            <%}else{%>
+                <h1>Please add a book!</h1>
+            <%}%>
         </div>
     </section>
 
