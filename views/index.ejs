@@ -31,7 +31,7 @@
             <% if (locals.books){%>
                 <% books.forEach(book => {%>
                     <div class="card">
-                        <img src="/images/harry.png" alt="">
+                        <img src="<%=book.img_url%>" alt="">
                         <div class="data">
                             <h1><%= book.book_name%></h1>
                             <p><%=book.author%></p>
