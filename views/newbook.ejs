@@ -1,6 +1,24 @@
 <%- include('partials/header.ejs') %>
 <body>
-    <h1>hello</h1>
+    <section>
+        <div class="new-container">
+            <div class="user-data">
+                <h1>Enter the Details</h1> 
+                <form action="/get_book_info" method="post">
+                    <label for="name">Book Name </label>
+                    <input type="text" name="name" required>
+                    <label for="isbn">ISBN(13-Digits)</label>
+                    <input type="text" name="isbn" pattern="\d{13,}" inputmode="numeric" required >
+                    <label for="rating">Rating(1/5)</label>
+                    <input type="number" max="5" min="1" required> 
+                    <label for="review">Review </label>
+                    <textarea name="review" id="review" cols="10" rows="5" required ></textarea>
+                    <input type="submit" name="submit-btn" value="Submit" class="submit-btn">
+                </form>
+                
+            </div>
+        </div>
+    </section>
 </body>
 <script>
     window.history.replaceState({}, document.title, "/");
