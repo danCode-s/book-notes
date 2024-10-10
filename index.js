@@ -29,7 +29,7 @@ const db = new pg.Client({
     user: "postgres",
     host: "localhost",
     database: "book",
-    password: "your-db-password",
+    password: "admin12",
     port: 5432
 })
 db.connect();
@@ -54,9 +54,9 @@ async function checkCurrentBooks(){
 
 
 app.get("/", async (req, res) => {
-    const books = await checkCurrentBooks();
+    const currentBooks = await checkCurrentBooks();
     // console.log(books)
-    res.render("index.ejs", {books: books});
+    res.render("index.ejs", {books: currentBooks});
 
 })
 
