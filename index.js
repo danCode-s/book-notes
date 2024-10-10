@@ -20,9 +20,9 @@ const books = [
     {id: 2, book_name: "Harry Potter and the Philosopher's Stone", author: "j.k rowling", ISBN: 9780747532699, review: "GOOD BOOK", rating: 4},
 ];
 
-books.forEach(async book => {
-    book['img_url'] = await getBookImageURL(book.ISBN);
-})
+// books.forEach(async book => {
+//     book['img_url'] = await getBookImageURL(book.ISBN);
+// })
 
 // Connect to the database
 const db = new pg.Client({
@@ -37,8 +37,13 @@ db.connect();
 
 // get url of the image using open library api
 async function getBookImageURL(ISBN){
-    const response = await axios.get(`https://covers.openlibrary.org/b/ISBN/${ISBN}-L.jpg`);
-    return response.config.url;
+    try {
+        const response = await axios.get(`https://covers.openlibrary.org/b/ISBN/${ISBN}-L.jpg`);
+        return response.config.url;
+    } catch (err) {
+        return err;
+    }
+
 }
 // get data from the database
 async function checkCurrentBooks(){
@@ -55,6 +60,15 @@ app.get("/", async (req, res) => {
 
 })
 
+
+app.post("/user-act", (req, res)=>{
+    const user_action = req.body;
+    if(user_action["add-btn"]){
+        res.render("newbook.ejs");
+    }else{
+        res.redirect("/")
+    }
+})
 
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
