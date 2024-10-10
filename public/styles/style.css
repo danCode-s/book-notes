@@ -127,6 +127,6 @@ input:hover{
     cursor: pointer;
 
 }
-h1{
-    text-align: center  ;
+.review > h1{
+    text-align: center;
 }
